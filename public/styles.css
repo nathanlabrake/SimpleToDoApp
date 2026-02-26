@@ -1,0 +1,77 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.4;
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #1e2330;
+  --muted: #6c7489;
+  --accent: #3f68f5;
+  --danger: #c5364f;
+  --border: #dfe3ee;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; background: var(--bg); color: var(--text); }
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand { text-decoration: none; font-weight: 800; color: var(--text); }
+nav { display: flex; gap: 1rem; }
+nav a { color: var(--accent); text-decoration: none; font-weight: 600; }
+
+.app-shell { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  padding: 1.25rem;
+}
+
+.subtext { color: var(--muted); }
+.stack { display: grid; gap: 0.9rem; }
+label { display: grid; gap: 0.35rem; font-weight: 600; }
+
+input, button { font: inherit; }
+input { width: 100%; padding: 0.65rem 0.75rem; border-radius: 10px; border: 1px solid var(--border); }
+
+button, .button-link {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button.ghost, .button-link.ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.inline-form { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: end; }
+.grow { flex: 1; }
+.home-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
+.error { color: var(--danger); min-height: 1.2em; }
+.lists { margin-top: 1rem; display: grid; gap: 1rem; }
+.todo-list { border: 1px solid var(--border); border-radius: 12px; padding: 1rem; }
+.todo-list .meta, .todo-list .item-note { color: var(--muted); margin-bottom: 0.75rem; }
+.items { margin: 0 0 0.8rem; padding-left: 1.2rem; }
+.items li + li { margin-top: 0.4rem; }
+.cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+
+@media (max-width: 600px) {
+  .app-shell { margin-top: 1rem; }
+  .card { padding: 1rem; }
+}
