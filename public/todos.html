@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Lists | Simple To-Do App</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="top-nav">
+      <a class="brand" href="/">Simple To-Do</a>
+      <nav>
+        <a href="/login.html">Login</a>
+        <a href="/register.html">Register</a>
+      </nav>
+    </header>
+
+    <main class="app-shell">
+      <section class="card">
+        <header class="home-header">
+          <div>
+            <h1>Your To-Do Lists</h1>
+            <p id="welcome" class="subtext"></p>
+          </div>
+          <button id="logout-btn" type="button" class="ghost">Log Out</button>
+        </header>
+
+        <form id="new-list-form" class="inline-form">
+          <label class="grow">
+            List name
+            <input id="list-name" type="text" maxlength="80" required />
+          </label>
+          <button type="submit">Create List</button>
+        </form>
+        <p id="list-error" class="error" role="alert" aria-live="polite"></p>
+
+        <div id="lists-container" class="lists" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <template id="todo-list-template">
+      <article class="todo-list">
+        <header>
+          <h3 class="list-title"></h3>
+          <p class="meta"></p>
+        </header>
+        <ul class="items"></ul>
+        <form class="item-form inline-form">
+          <input class="item-input grow" type="text" maxlength="140" placeholder="Add an item" required />
+          <button type="submit">Add</button>
+        </form>
+        <p class="item-note"></p>
+      </article>
+    </template>
+
+    <script src="/todos.js" defer></script>
+  </body>
+</html>
