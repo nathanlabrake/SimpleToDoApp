@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple To-Do App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="login-view" class="card view active" aria-labelledby="login-title">
+        <h1 id="login-title">Welcome back</h1>
+        <p class="subtext">Log in with your email and password to manage your to-do lists.</p>
+        <form id="login-form" class="stack">
+          <label>
+            Email
+            <input id="email" type="email" name="email" autocomplete="email" required />
+          </label>
+          <label>
+            Password
+            <input id="password" type="password" name="password" autocomplete="current-password" required minlength="6" />
+          </label>
+          <button type="submit">Log In</button>
+          <p id="login-error" class="error" role="alert" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section id="home-view" class="card view" aria-labelledby="home-title">
+        <header class="home-header">
+          <div>
+            <h2 id="home-title">Your To-Do Lists</h2>
+            <p class="subtext" id="welcome"></p>
+          </div>
+          <button id="logout-btn" class="ghost" type="button">Log Out</button>
+        </header>
+
+        <form id="new-list-form" class="stack inline-form">
+          <label class="grow">
+            List name
+            <input id="list-name" name="listName" type="text" maxlength="80" required />
+          </label>
+          <button type="submit">Create List</button>
+        </form>
+
+        <p id="list-error" class="error" role="alert" aria-live="polite"></p>
+
+        <div id="lists-container" class="lists" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <template id="todo-list-template">
+      <article class="todo-list">
+        <header>
+          <h3 class="list-title"></h3>
+          <p class="meta"></p>
+        </header>
+        <ul class="items"></ul>
+        <form class="item-form inline-form">
+          <input class="item-input grow" type="text" maxlength="140" placeholder="Add an item" required />
+          <button type="submit">Add</button>
+        </form>
+        <p class="item-note"></p>
+      </article>
+    </template>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
